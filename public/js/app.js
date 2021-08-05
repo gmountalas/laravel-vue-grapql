@@ -31,6 +31,7 @@ var routes = [{
   component: _Post__WEBPACK_IMPORTED_MODULE_2__.default
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_4__.default({
+  mode: 'history',
   routes: routes
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
