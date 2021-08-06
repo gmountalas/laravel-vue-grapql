@@ -7581,6 +7581,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   apollo: {
@@ -28856,7 +28862,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    PostList\n")])
+  return _c("div", [
+    _vm._v("\n    PostList\n    "),
+    _vm.$apollo.loading
+      ? _c("div")
+      : _c(
+          "div",
+          _vm._l(_vm.posts, function(post) {
+            return _c("div", { key: post.id }, [
+              _vm._v(
+                "\n            " +
+                  _vm._s(post.id) +
+                  " is titled: " +
+                  _vm._s(post.title) +
+                  "\n        "
+              )
+            ])
+          }),
+          0
+        )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
