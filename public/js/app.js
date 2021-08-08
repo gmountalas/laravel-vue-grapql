@@ -29068,7 +29068,7 @@ var render = function() {
                 _c("img", {
                   staticClass: " w-16 h-16 rounded-full",
                   attrs: {
-                    src: "/storage/faces/ahmad.jpg" + _vm.post.author.avatar,
+                    src: "/storage/faces/" + _vm.post.author.avatar,
                     alt: "Author Avatar"
                   }
                 })

@@ -14,7 +14,7 @@
       <div class=" mb-24 flex">
         <div class=" mr-6">
           <img
-            :src="'/storage/faces/ahmad.jpg' + post.author.avatar"
+            :src="'/storage/faces/' + post.author.avatar"
             alt="Author Avatar"
             class=" w-16 h-16 rounded-full"
           />
