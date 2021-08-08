@@ -1,4 +1,5 @@
 import ApolloClient from 'apollo-boost'
+import moment from 'moment';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import './bootstrap';
@@ -7,8 +8,7 @@ import Post from './Post';
 import VueApollo from 'vue-apollo'
 import TopicPostList from './TopicPostList';
 import AuthorPostList from './AuthorPostList';
-// Use moment library and create global filter
-import moment from 'moment';
+import NotFound from './NotFound';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -37,9 +37,7 @@ const routes = [
     {
         path: '*',
         name: '404',
-        component: {
-            template: '<div>Not Found</div>'
-        }
+        component: NotFound
     }
 ];
 Vue.use(VueApollo)
