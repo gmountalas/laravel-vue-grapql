@@ -34,6 +34,13 @@ const routes = [
         name: 'author',
         component: AuthorPostList
     },
+    {
+        path: '*',
+        name: '404',
+        component: {
+            template: '<div>Not Found</div>'
+        }
+    }
 ];
 Vue.use(VueApollo)
 const apolloClient = new ApolloClient({

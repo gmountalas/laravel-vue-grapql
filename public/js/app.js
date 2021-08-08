@@ -7708,6 +7708,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
         return {
           id: this.$route.params.id
         };
+      },
+      error: function error() {
+        this.$router.push({
+          name: "404"
+        });
       }
     }
   }
@@ -7920,6 +7925,12 @@ var routes = [{
   path: '/authors/:id',
   name: 'author',
   component: _AuthorPostList__WEBPACK_IMPORTED_MODULE_5__.default
+}, {
+  path: '*',
+  name: '404',
+  component: {
+    template: '<div>Not Found</div>'
+  }
 }];
 vue__WEBPACK_IMPORTED_MODULE_7__.default.use(vue_apollo__WEBPACK_IMPORTED_MODULE_3__.default);
 var apolloClient = new apollo_boost__WEBPACK_IMPORTED_MODULE_9__.default({
