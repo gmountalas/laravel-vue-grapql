@@ -3,7 +3,14 @@
     <div v-if="$apollo.loading">Loading...</div>
     <div v-else>
       <div class="text-lg text-gray-600">
-        By {{ post.author.name }} in {{ post.topic.name }} * 3 hours ago
+        By {{ post.author.name }} in
+        <router-link
+          :to="{ name: 'topic', params: { slug: post.topic.slug } }"
+          class="underline hover:text-black"
+        >
+          {{ post.topic.name }}
+        </router-link>
+        &nbsp;* 3 hours ago
       </div>
       <h1 class="text-5xl mt-10 font-bold mb-12">{{ post.title }}</h1>
 
@@ -24,7 +31,14 @@
             Written by {{ post.author.name }}
           </div>
           <div class=" text-gray-600">
-            Published in {{ post.topic.name }} on August 8, 2021
+            Published in
+            <router-link
+              :to="{ name: 'topic', params: { slug: post.topic.slug } }"
+              class="underline hover:text-black"
+            >
+              {{ post.topic.name }}
+            </router-link>
+            &nbsp;on August 8, 2021
           </div>
         </div>
       </div>
