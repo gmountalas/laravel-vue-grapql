@@ -21,7 +21,7 @@
       >
         {{ post.topic.name }}
       </router-link>
-      &nbsp; 3 hours ago
+      &nbsp;* {{ post.created_at | timeago }}
     </div>
   </div>
 </template>

@@ -7,6 +7,8 @@ import Post from './Post';
 import VueApollo from 'vue-apollo'
 import TopicPostList from './TopicPostList';
 import AuthorPostList from './AuthorPostList';
+// Use moment library and create global filter
+import moment from 'moment';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
@@ -47,6 +49,9 @@ const router = new VueRouter({
     mode: 'history',
     routes
 });
+
+Vue.filter("timeago", value => moment(value).fromNow());
+Vue.filter("longDate", value => moment(value).format("MMMM Do YYYY"));
 
 const app = new Vue({
     el: '#app',

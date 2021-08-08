@@ -17,7 +17,7 @@
         >
           {{ post.topic.name }}
         </router-link>
-        &nbsp;* 3 hours ago
+        &nbsp;* {{ post.created_at | timeago }}
       </div>
       <h1 class="text-5xl mt-10 font-bold mb-12">{{ post.title }}</h1>
 
@@ -51,7 +51,7 @@
             >
               {{ post.topic.name }}
             </router-link>
-            &nbsp;on August 8, 2021
+            &nbsp;on {{ post.created_at | longDate }}
           </div>
         </div>
       </div>
@@ -70,6 +70,7 @@ export default {
             id
             title
             content
+            created_at
             author {
               id
               name
